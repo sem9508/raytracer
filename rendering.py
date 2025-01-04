@@ -50,7 +50,7 @@ def render(width, height):
                 py = (1 - 2 * (y + 0.5 + dy) / height) * math.tan(fov / 2)
                 
                 ray_direction = Vec3(px, py, -1).normalize()
-                color += cast_ray2(camera_origin, ray_direction, spheres, lights, depth)
+                color += cast_ray(camera_origin, ray_direction, spheres, lights, depth)
 
             color /= samples
             image[y][x] = color
